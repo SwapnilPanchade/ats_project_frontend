@@ -13,45 +13,6 @@ The **Applicant Tracking System (ATS)** is a web-based application that allows o
 - **Real-Time AI CV Analysis**: Recruiters can request AI-powered CV analysis, and results are streamed via WebSockets.
 - **Rate Limiting & Input Validation**: Ensures security by limiting API requests and validating user inputs.
 
-## Tech Stack
-
-- **Frontend**: React, TypeScript, Tailwind CSS
-- **State Management**: React Context API
-- **Backend**: Node.js (Express, NestJS) [Backend Repository](#)
-- **Database**: MySQL
-- **Authentication**: JWT (JSON Web Tokens)
-- **AI Services**: Google Gemini AI for CV analysis
-- **WebSockets**: Real-time AI response streaming
-
-## Folder Structure
-
-```
-src/
-├── components/
-│   ├── Auth/
-│   │   ├── LoginForm.tsx
-│   │   └── RegisterForm.tsx
-│   ├── Candidate/
-│   │   └── CVUpload.tsx
-│   ├── Recruiter/
-│   │   ├── CVList.tsx
-│   │   └── AnalysisModal.tsx
-├── pages/
-│   ├── Dashboard.tsx
-│   ├── CandidateDashboard.tsx
-│   └── RecruiterDashboard.tsx
-├── hooks/
-│   ├── useAuth.ts
-│   └── useWebSocket.ts
-├── services/
-│   ├── api.ts
-│   └── auth.ts
-├── types/
-│   └── types.ts
-├── App.tsx
-└── main.tsx
-```
-
 ## Setup & Installation
 
 ### Prerequisites
@@ -76,8 +37,8 @@ Ensure you have the following installed:
 3. **Configure Environment Variables**
    Create a `.env` file in the root directory:
    ```env
-   REACT_APP_API_BASE_URL=http://localhost:3000
-   REACT_APP_WEBSOCKET_URL=ws://localhost:3000
+   VITE_API_URL=http://localhost:3000
+   VITE_WS_URL=ws://localhost:3000
    ```
 4. **Start the Development Server**
    ```bash
@@ -136,15 +97,3 @@ We welcome contributions! To contribute:
 2. Create a new branch.
 3. Make changes and commit.
 4. Open a pull request.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
-## Contact
-
-For any inquiries or support, contact: [your-email@domain.com]
-
----
-
-**Documentation Version: 1.0.0**

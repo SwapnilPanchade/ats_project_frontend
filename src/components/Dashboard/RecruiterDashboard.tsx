@@ -55,8 +55,6 @@ const RecruiterDashboard: React.FC = () => {
       setCvAnalysis((prev) => ({ ...prev, [cvId]: "Analyzing..." }));
 
       await api.post(`/cvs/${cvId}/analyze`);
-
-      // The actual analysis updates will come through the WebSocket connection
     } catch (error) {
       setCvAnalysis((prev) => ({ ...prev, [cvId]: "Failed to analyze CV" }));
       setAnalyzingCvId(null);
@@ -69,8 +67,6 @@ const RecruiterDashboard: React.FC = () => {
   ) => {
     try {
       await api.patch(`/cvs/${cvId}`, { status });
-
-      // Update the local state with the new status
       setCvs(
         cvs.map((cv) => {
           if (cv.id === cvId) {

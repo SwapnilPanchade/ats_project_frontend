@@ -70,13 +70,11 @@ const CandidateDashboard: React.FC = () => {
       setUploadSuccess("CV uploaded successfully");
       setFile(null);
 
-      // Reset the file input
       const fileInput = document.getElementById("cv") as HTMLInputElement;
       if (fileInput) {
         fileInput.value = "";
       }
 
-      // Fetch updated applications
       fetchApplications();
     } catch (error: any) {
       setUploadError(error.response?.data?.message || "Failed to upload CV");
